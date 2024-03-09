@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>- Encuentra tu SuperHero</title>
+    <meta name="author" content="Magally Silva Bello">
+    <meta name="description"
+        content="Encuentra tu SuperHero es un sitio web que te permite buscar información sobre superhéroes de diferentes universos.">
+    <meta name="keywords" content="superhéroes, Marvel, DC Comics, búsqueda, información">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/svg+xml">
+    <script src="https://kit.fontawesome.com/b95c51ffdb.js" crossorigin="anonymous"></script>
+    <!-- enlace de configuración de íconos con Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Importar CDN de bootstrap -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <!-- Inicio del NavBar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
+        <div class="container ">
+            <a class="navbar-brand fw-bold ps-5 fs-4" href="#" title="SuperHero" target="_self">
+                <img class="imagenNavBar me-3" src="assets/img/sh2.jpg" alt="Logotipo SuperHero">SuperHero
+            </a>
+        </div>
+    </nav>
+    <!-- Fin del NavBar -->
+
+    <!-- Inicio Header Section -->
+    <header>
+        <div class="container text-center">
+            <img class="rounded mx-auto d-block mt-5 pt-5 shadow p-3 mb-3 bg-white rounded" src="/assets/img/sh1.jpg" alt="Imagen de Super Hero">
+            <h1>Encuentra tu SuperHero</h1>
+        </div>
+    </header>
+    <!-- Fin Header Section -->
+
+    <main>
+        <!-- Inicio Section Buscar Hero  -->
+        <section>
+            <div class="container">
+                <h2 class="mt-5">Buscar Super Heroe</h2>
+                <p>Introduzca números del 1 al 731</p>
+                <form id="form-busqueda">
+                    <div>
+                        <input type="text" id="id" name="id-heroe" class="form-control"
+                            placeholder="Ingrese el ID del superhéroe">
+                        <button type="submit" class="btn btn-danger text-warning fw-bold my-3">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- Fin Section Buscar Hero -->
+
+        <!-- Inicio Mostrar Información Super Hero -->
+        <section id="info-SuperHero">  
+        </section>
+        <!-- Fin Mostrar Información Super Heros -->       
+   
+    </main>
+
+    <footer>
+        <div class=" bg-dark text-light text-center py-3">
+            <p>&copy;2024 SuperHero Chile. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Error -->
+    <div class="modal" tabindex="-1" id="errorModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Error</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Debe de ingresar números de 1 al 731.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger text-warning fw-bold" data-bs-dismiss="modal">Close</button>              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal poderes -->
+      <div class="modal fade" id="poderModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Estadísticas de poder</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger text-warning fw-bold " data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script><!-- Jquery Version CDN -->
+        <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script> <!-- Importar CANVASJS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script> <!-- (CDN)Enlace de boostrap para funciones con JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
