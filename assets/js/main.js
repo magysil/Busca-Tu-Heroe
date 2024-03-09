@@ -51,7 +51,13 @@ $(function () {
     $("#info-SuperHero").append(cardHero);
 
     $("#poderModal").on("shown.bs.modal", function(){
-          
+        let poderes = [];
+        for (let labelPoder in info.powerstats){
+          let value = info.powerstats[labelPoder] == "null" ? 0 : info.powerstats[labelPoder];
+          poderes.push({y:(value), label:labelPoder})
+          console.log(poderes)
+        }
+        
       var chart = new CanvasJS.Chart("chartContainer", {
          theme: "light2", // "light1", "light2", "dark1", "dark2"
        exportEnabled: true,
@@ -62,14 +68,14 @@ $(function () {
          data: [{
            type: "pie",
            startAngle: 270,
-           dataPoints: [
-             { y: info.powerstats.intelligence == "null" ? 0 : info.powerstats.intelligence, label: "Inteligencia" },
+           dataPoints: poderes
+             /* { y: info.powerstats.intelligence == "null" ? 0 : info.powerstats.intelligence, label: "Inteligencia" },
              { y: info.powerstats.strength == "null" ? 0 : info.powerstats.strength, label: "Fuerza" },
              { y: info.powerstats.speed == "null" ? 0 : info.powerstats.speed, label: "Velocidad" },
              { y: info.powerstats.durability == "null" ? 0 : info.powerstats.durability, label: "Durabilidad" },
              { y: info.powerstats.power == "null" ? 0 : info.powerstats.power, label: "Poder" },
-             { y: info.powerstats.combat == "null" ? 0 : info.powerstats.combat, label: "Combate" }         
-           ]
+             { y: info.powerstats.combat == "null" ? 0 : info.powerstats.combat, label: "Combate" }  */        
+           
          }]
        });
        chart.render();
