@@ -6,8 +6,13 @@
 /* Header */
 .rounded {
     margin-top: 7rem ;
+    width: 37.5rem;
 }
 /* Mainadd . */
 .card{
     width: 18rem;
+}
+
+.formContainer{
+    margin-bottom: 5rem;
 }

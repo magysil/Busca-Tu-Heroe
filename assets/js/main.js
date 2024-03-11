@@ -1,13 +1,18 @@
+//Captura de Informacion y validacion de informacion solo numero 3.1 3.3 3.8
+
 $(function () {
   $("#form-busqueda").submit(function (e) {
     e.preventDefault();
     let id = $("#id").val();
     if ((id >= 1) & (id <= 731) & /^\d+$/.test(id)) {
       buscarSuperHero(id);
+      $("#id").val("")
     } else {
       $("#errorModal").modal("show");
     }
   });
+
+  //Consulta a la API 3.2 3.4
 
   function buscarSuperHero(id) {
     const key = "10160796884347278";
@@ -20,14 +25,18 @@ $(function () {
         console.log(data);
       },
       error: function (error) {
-        alert("No se puedo cargar la data");
+        alert("No se puedo cargar la data", error);
       },
     });
   }
+
+  //Renderizado de Informacion en Card 3.5 3.6
+
   function infoSuperHero(info) {
+    $("#info-SuperHero").empty();
     const cardHero = `
-        <h2 class ="text-center">Super Heroe Encontrado</h2>
-        <div class="container d-flex justify-content-center">
+        <h2 class ="text-center">Super Heroe Encontrado N°${info.id}</h2>
+        <div class="container d-flex justify-content-center mb-5">
         <div class="card my-5 shadow p-3  bg-white rounded ">
               <img src="${info.image.url}" class="card-img-top" alt="${info.name}">
         <div class="card-body">
@@ -49,6 +58,8 @@ $(function () {
       </div>
         `;
     $("#info-SuperHero").append(cardHero);
+
+// Graficos 3.7
 
     $("#poderModal").on("shown.bs.modal", function(){
         let poderes = [];
