@@ -1,4 +1,4 @@
-//Captura de Informacion y validacion de informacion solo numero 3.1 3.3 3.8
+//Captura de Información y validación de la información (solo numero)
 
 $(function () {
   $("#form-busqueda").submit(function (e) {
@@ -12,7 +12,7 @@ $(function () {
     }
   });
 
-  //Consulta a la API 3.2 3.4
+  //Consulta a la API y envío de la data para mostrar la información
 
   function buscarSuperHero(id) {
     const key = "10160796884347278";
@@ -25,12 +25,12 @@ $(function () {
         console.log(data);
       },
       error: function (error) {
-        alert("No se puedo cargar la data", error);
+        alert("Hay problemas de conexión por favor intente mas tarde ", error);
       },
     });
   }
 
-  //Renderizado de Informacion en Card 3.5 3.6
+  //Renderizado de Informacion en Card
 
   function infoSuperHero(info) {
     $("#info-SuperHero").empty();
@@ -59,7 +59,7 @@ $(function () {
         `;
     $("#info-SuperHero").append(cardHero);
 
-// Graficos 3.7
+// Graficos método CanvaJS
 
     $("#poderModal").on("shown.bs.modal", function(){
         let poderes = [];
@@ -79,14 +79,7 @@ $(function () {
          data: [{
            type: "pie",
            startAngle: 270,
-           dataPoints: poderes
-             /* { y: info.powerstats.intelligence == "null" ? 0 : info.powerstats.intelligence, label: "Inteligencia" },
-             { y: info.powerstats.strength == "null" ? 0 : info.powerstats.strength, label: "Fuerza" },
-             { y: info.powerstats.speed == "null" ? 0 : info.powerstats.speed, label: "Velocidad" },
-             { y: info.powerstats.durability == "null" ? 0 : info.powerstats.durability, label: "Durabilidad" },
-             { y: info.powerstats.power == "null" ? 0 : info.powerstats.power, label: "Poder" },
-             { y: info.powerstats.combat == "null" ? 0 : info.powerstats.combat, label: "Combate" }  */        
-           
+           dataPoints: poderes             
          }]
        });
        chart.render();
